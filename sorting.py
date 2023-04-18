@@ -29,7 +29,15 @@ def read_data(file_name):
         data = dict(zip(titles, datas))
         return data
 
-
+def selection_sort(list_of_numbers):
+    size = len(list_of_numbers)
+    for ind in range(size):
+        min_index = ind
+        for j in range(ind + 1, size):
+            if list_of_numbers[j] < list_of_numbers[min_index]:
+                min_index = j
+        (list_of_numbers[ind], list_of_numbers[min_index]) = (list_of_numbers[min_index], list_of_numbers[ind])
+    return list_of_numbers
 def main():
     pass
 
@@ -37,3 +45,4 @@ def main():
 if __name__ == '__main__':
     main()
     read_data("numbers.csv")
+    print(selection_sort(['88', '36', '21', '54', '99', '1', '81', '18', '21', '36', '61']))
